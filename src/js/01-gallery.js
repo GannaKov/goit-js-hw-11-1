@@ -13,10 +13,7 @@ const galleryDiv = document.querySelector('.gallery');
 // galleryDiv.insertAdjacentHTML('beforeend', imgMarkup);
 
 import axios from 'axios';
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
+
 // import './css/styles.css';
 const BASEURL = 'https://pixabay.com/api/';
 const keyApiPix = '30040272-179178153c29e3da83ceec1ea';
@@ -42,8 +39,8 @@ function onFormSubmit(evt) {
     })
     .catch(error => console.log(error));
 }
-async function fetchPhotos(keyWord) {
-  const response = await axios.get(
+function fetchPhotos(keyWord) {
+  const response = axios.get(
     `${BASEURL}?key=${keyApiPix}&q=${keyWord}&image_type=photo&orientation=horizontal&safesearch=true`
   );
 
@@ -75,3 +72,7 @@ function createSmallImgMarkup(arrPhotos) {
     )
     .join('');
 }
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});

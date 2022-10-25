@@ -1,0 +1,37 @@
+.gallery {
+  display: flex;
+  width: 100vw;
+  margin-top: 55px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  /* align-items: baseline; */
+  width: 100%;
+}
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 80px) / 5);
+  /* height: 330px; */
+}
+.gallery__link {
+  flex-grow: 1;
+}
+.photo-card img {
+  object-fit: cover;
+  /* height: 274px; */
+  height: 250px;
+  width: 100%;
+}
+.info {
+  /* padding: 10 20; */
+  display: flex;
+  column-gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.info-item {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
